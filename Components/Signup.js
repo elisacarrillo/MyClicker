@@ -2,8 +2,32 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { NativeBaseProvider, Box, Button, FormControl, Input, Stack} from 'native-base';
 import { WarningOutlineIcon } from 'native-base';
+import auth from '@react-native-firebase/auth';
 
 function SignUp() {
+
+    registerUser = () => {
+        console.log("Registering user");
+        auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then(() => {
+            console.log('User account created & signed in!');
+        })
+        .catch(error => {
+            if (error.code === 'auth/email-already-in-use') {
+                console.log('That email address is already in use!');
+
+            }
+
+            if (error.code === 'auth/invalid-email') {
+                console.log('That email address is invalid!');
+            }
+
+            console.error(error);
+        });
+    }
+    
+
+        
   return (
     <NativeBaseProvider>
     <Box margin={4}>

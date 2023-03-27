@@ -27,8 +27,7 @@ export default function Home(props) {
           <Text>Welcome to MyClicker</Text>
           {/* newline */}
           <Text> </Text>
-          <Button onPress={goToLoginPage}>Google Login</Button>
-          <Text> </Text>
+          
           <Button onPress={goToLoginPage}>Login</Button>
           <Text> </Text>
           <Button onPress={goToSignupPage}>Sign Up</Button>

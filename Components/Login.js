@@ -3,7 +3,17 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NativeBaseProvider, Box, Button, FormControl, Input, Stack} from 'native-base';
 import { WarningOutlineIcon } from 'native-base';
 
-function Login() {
+export default function Login(props) {
+  const goToProfile = () => {
+    console.log("Going to profile page");
+    props.navigation.navigate('Profile');
+  }
+
+
+
+
+
+
 
   return (
     <NativeBaseProvider>
@@ -19,7 +29,7 @@ function Login() {
             <Input />
             
           </FormControl>
-          <Button colorScheme="blue" _text={{ color: 'white' }}>
+          <Button colorScheme="blue" _text={{ color: 'white' }} onPress={goToProfile}>
             Login
           </Button>
          
@@ -28,4 +38,3 @@ function Login() {
   );
 }
 
-export default Login;

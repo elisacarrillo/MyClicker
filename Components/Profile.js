@@ -52,15 +52,17 @@ function Profile() {
 
         //fetch using axios
         axios.post('http://localhost:3000/answer', {
-            answer: text
+            body: JSON.stringify({
+                // Your request payload goes here
+                // e.g. { "question": "What is your name?" }
+                "answer": text
+            })
         })
         .then((response) => {
             console.log(response);
             // get question from response
             // set question to state
             setShowQuestion(false);
-
-
         })
         .catch((error) => {
             console.log(error);

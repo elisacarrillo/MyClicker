@@ -1,15 +1,18 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
+app.use(bodyParser.json())
 
-const cors = require('cors');
-app.use(cors());
+
 
 // Set up a route to handle POST requests for submitting a student's answer
 app.post('/answer', (req, res) => {
-    // Extract the answer from the request body
-    const { answer } = req.body;
+    // Print in console the answer submitted by the student
+    console.log(req.body);
+    console.log(req.body.answer)
 
-    
+
+
   
     // Process the answer and send a response back to the client
     // ...
@@ -26,7 +29,7 @@ app.post('/answer', (req, res) => {
     // });
     
 
-    app.get('/question', cors(), (req, res) => {
+    app.get('/question',  (req, res) => {
         console.log("Getting question")
         const question = {
           id: 1,

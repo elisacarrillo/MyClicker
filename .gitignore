@@ -10,6 +10,11 @@ npm-debug.*
 *.orig.*
 web-build/
 
+.env
+
+# hide sensitive info in server's configuration
+# server/config/
+
 # macOS
 .DS_Store
 
